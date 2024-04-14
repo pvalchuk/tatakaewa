@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ArtApp</string>
+
+<!--  activity_welcome  -->
+
+    <string name="nameTitle">TATAKAEWA</string>
+    <string name="description">A free artist creates without a contract</string>
+    <string name="backgroundDesc">background</string>
+
+<!--  activity_categories  -->
+
+    <string name="categories_title">Choose your style!</string>
+
+<!--  button text  -->
+
+    <string name="realism_title">Realism</string>
+    <string name="anime_title">Anime</string>
+    <string name="manga_title">Manga</string>
+    <string name="abstraction_title">Abstraction</string>
+    <string name="vector_graphics_title">Vector graphics</string>
+
+</resources>
