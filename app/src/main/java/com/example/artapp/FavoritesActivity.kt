@@ -1,6 +1,9 @@
 package com.example.artapp
 
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.UnderlineSpan
 import androidx.appcompat.app.AppCompatActivity
 import com.example.artapp.databinding.ActivityFavoritesBinding
 
@@ -14,5 +17,6 @@ class FavoritesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityFavoritesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
     }
 }
