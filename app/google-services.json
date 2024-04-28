@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "933016314821",
+    "project_id": "artapp-fde2b",
+    "storage_bucket": "artapp-fde2b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933016314821:android:c3482191dfc1e4dca1a1ac",
+        "android_client_info": {
+          "package_name": "com.example.artapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtLuLqgTrHVhAJabJQfL7n0v_igd6fNqY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

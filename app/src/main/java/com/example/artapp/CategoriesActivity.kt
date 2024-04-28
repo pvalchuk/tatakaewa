@@ -3,6 +3,7 @@ package com.example.artapp
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import com.example.artapp.databinding.ActivityCategoriesBinding
 
 class CategoriesActivity : AppCompatActivity() {
@@ -16,6 +17,23 @@ class CategoriesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityCategoriesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        with(binding) {
+            icMenu.setOnClickListener {
+                darkBackgroundMenu.isVisible = true
+                menuFragment.menu.isVisible = true
+            }
+
+            menuFragment.btnBack.setOnClickListener {
+                darkBackgroundMenu.isVisible = false
+                menuFragment.menu.isVisible = false
+            }
+
+            darkBackgroundMenu.setOnClickListener {
+                darkBackgroundMenu.isVisible = false
+                menuFragment.menu.isVisible = false
+            }
+        }
 
         val activities = listOf(
             RealismActivity::class.java,

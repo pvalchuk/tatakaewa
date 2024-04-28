@@ -4,81 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    app:layout_constraintWidth_max="wrap">
+
+<!--  Кнопка меню  -->
 
     <ImageButton
         android:id="@+id/ic_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ic_menu"
-        android:contentDescription="menu"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="35dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/PopUpMenuStyle"/>
+        style="@style/ButtonMenu"
+        tools:ignore="MissingConstraints"/>
+
+<!--  Кнопка избранного  -->
 
     <ImageButton
         android:id="@+id/ic_favorites"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ic_favorites"
-        android:contentDescription="favorites"
-        android:layout_marginEnd="25dp"
-        android:layout_marginTop="33dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        style="@style/ButtonFavorites"
+        android:visibility="visible"
+        tools:ignore="MissingConstraints"/>
+
+    <ImageButton
+        android:id="@+id/ic_favorites_orange"
+        style="@style/ButtonFavorites"
+        android:visibility="gone"
+        android:background="@drawable/ic_favorites_orange"
+        tools:ignore="MissingConstraints"/>
+
+<!--  Основной текст приложения  -->
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:fontFamily="@font/nunito_bold"
-        android:text="Naruto"
-        android:textColor="@color/orange"
-        android:textSize="75sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ic_menu" />
+        android:id="@+id/titleRealism"
+        android:text="Title"
+        style="@style/MainTitle"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/description_realism_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-15dp"
-        android:fontFamily="@font/nunito_medium"
-        android:text="Traveling the World"
-        android:textColor="@color/white"
-        android:textSize="35sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:id="@+id/descriptionRealism"
+        style="@style/DescriptionMainTitle"
+        android:text="Description about title"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/inspiration_link_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_light"
-        android:text="more inspiration"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:alpha="0.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_realism_text_view" />
+        android:id="@+id/inspirationRealism"
+        style="@style/Inspiration"
+        tools:ignore="MissingConstraints" />
+
+<!--  Кнопка показать больше  -->
 
     <Button
-        android:id="@+id/btn_show_more"
+        android:id="@+id/buttonShowMore"
         style="@style/ButtonShowMore"
-        android:text="show more"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inspiration_link_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/inspirationRealism"
+        tools:ignore="MissingConstraints" />
 
+<!--  Затемненный фон  -->
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/darkBackgroundMenu"
+        style="@style/DarkBackgroundMenu"
+        android:layout_width="95dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/menuFragment"
+        app:layout_constraintEnd_toEndOf="@+id/menuFragment"
+        app:layout_constraintTop_toTopOf="@+id/menuFragment"
+        tools:ignore="MissingConstraints" />
 
+<!--  Всплывающее меню  -->
+
+    <include layout="@layout/menu_fragment"
+        android:id="@+id/menuFragment"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

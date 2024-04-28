@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--  Всплывающее слева меню  -->
+
+    <!--  Контейнер меню  -->
+
+    <LinearLayout
+        android:id="@+id/menu"
+        android:visibility="gone"
+        style="@style/menu"
+        tools:ignore="MissingConstraints">
+
+        <!--  Основной текст внутри меню  -->
+
+        <TextView
+            android:id="@+id/menu_app_name"
+            style="@style/menuAppName" />
+
+        <!--  Выпадающий список навигации  -->
+
+        <LinearLayout
+            android:id="@+id/navigationBarList"
+            style="@style/NavigationBarList">
+
+            <LinearLayout
+                android:id="@+id/menuContainerList_favorites"
+                style="@style/menuContainerList">
+
+                <ImageView
+                    android:id="@+id/img_favorites"
+                    style="@style/menuIcon"
+                    android:background="@drawable/ic_favorites" />
+
+                <TextView
+                    android:id="@+id/text_favorites"
+                    style="@style/MenuTextStyle"
+                    android:text="Favorites" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menu_language"
+                style="@style/menuContainerList">
+
+                <ImageView
+                    android:id="@+id/img_language"
+                    style="@style/menuIcon"
+                    android:background="@drawable/ic_language" />
+
+                <TextView
+                    android:id="@+id/text_language"
+                    style="@style/MenuTextStyle"
+                    android:text="Language" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menu_notifications"
+                style="@style/menuContainerList">
+
+                <ImageView
+                    android:id="@+id/img_notifications"
+                    style="@style/menuIcon"
+                    android:background="@drawable/ic_notifications" />
+
+                <TextView
+                    android:id="@+id/text_notifications"
+                    style="@style/MenuTextStyle"
+                    android:text="Notifications" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menu_categories"
+                style="@style/menuContainerList">
+
+                <ImageView
+                    android:id="@+id/img_categories"
+                    style="@style/menuIcon"
+                    android:background="@drawable/ic_categories" />
+
+                <TextView
+                    android:id="@+id/text_categories"
+                    style="@style/MenuTextStyle"
+                    android:text="Categories" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menu_invite"
+                style="@style/menuContainerList">
+
+                <ImageView
+                    android:id="@+id/img_invite"
+                    style="@style/menuIcon"
+                    android:background="@drawable/ic_invite" />
+
+                <TextView
+                    android:id="@+id/text_invite"
+                    style="@style/MenuTextStyle"
+                    android:text="Invite friends" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menu_rate"
+                style="@style/menuContainerList">
+
+                <ImageView
+                    android:id="@+id/img_rate"
+                    style="@style/menuIcon"
+                    android:background="@drawable/ic_rate" />
+
+                <TextView
+                    android:id="@+id/text_rate"
+                    style="@style/MenuTextStyle"
+                    android:text="Rate the app" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menu_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_about"
+                    style="@style/menuIcon"
+                    android:background="@drawable/ic_about" />
+
+                <TextView
+                    android:id="@+id/text_about"
+                    style="@style/MenuTextStyle"
+                    android:text="About application" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            style="@style/ButtonMenuBack"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

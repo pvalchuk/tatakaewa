@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-<!--  button categories style  -->
+<!--  Кнопка с категориями  -->
 
     <style name="ButtonCategories" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:layout_width">340dp</item>
@@ -14,15 +14,172 @@
         <item name="android:layout_marginTop">35dp</item>
     </style>
 
+<!--  Кнопка показать больше  -->
+
     <style name="ButtonShowMore" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:layout_width">240dp</item>
-        <item name="android:layout_height">55dp</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:background">@drawable/btn</item>
-        <item name="fontFamily">@font/nunito_medium</item>
-        <item name="android:textSize">34sp</item>
+        <item name="android:fontFamily">@font/nunito_medium</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_marginTop">35dp</item>
+        <item name="android:layout_marginTop">55dp</item>
+        <item name="android:text">show more</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
     </style>
 
+<!--  Кнопка меню  -->
+
+    <style name="ButtonMenu" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/ic_menu</item>
+        <item name="android:layout_marginStart">25dp</item>
+        <item name="android:layout_marginTop">35dp</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+    </style>
+
+<!--  Кнопка избранного  -->
+
+    <style name="ButtonFavorites" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/ic_favorites</item>
+        <item name="android:layout_marginEnd">25dp</item>
+        <item name="android:layout_marginTop">33dp</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+    </style>
+
+<!--  Основной заголовок  -->
+
+    <style name="MainTitle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">250dp</item>
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">48sp</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintTop_toBottomOf">@+id/ic_menu</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">30dp</item>
+        <item name="android:paddingEnd">30dp</item>
+    </style>
+
+<!--  Дополнительный текст в заголовку  -->
+
+    <style name="DescriptionMainTitle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">-5dp</item>
+        <item name="fontFamily">@font/nunito_medium</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintTop_toBottomOf">@+id/titleRealism</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">50dp</item>
+        <item name="android:paddingEnd">50dp</item>
+    </style>
+
+<!--  Ссылка на вдохновление  -->
+
+    <style name="Inspiration" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/nunito_light</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:alpha">0.5</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintTop_toBottomOf">@+id/descriptionRealism</item>
+        <item name="android:text">more inspiration</item>
+    </style>
+
+<!--  Контейнер меню  -->
+
+    <style name="menu" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">330dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/violet</item>
+        <item name="android:orientation">vertical</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+
+    </style>
+
+<!--  Заголовок внутри меню  -->
+
+    <style name="menuAppName" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">175dp</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+        <item name="android:text">@string/nameTitle</item>
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">60sp</item>
+    </style>
+
+<!--  Выпадающий список навигации  -->
+
+    <style name="NavigationBarList" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+<!--  Меню контейнер иконки + текста  -->
+
+    <style name="menuContainerList" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">15dp</item>
+    </style>
+
+<!--  Иконки меню  -->
+
+    <style name="menuIcon" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginStart">20dp</item>
+    </style>
+
+<!--  Текст внутри меню  -->
+
+    <style name="MenuTextStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="fontFamily">@font/nunito_medium</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+<!--  Кнопка скрыть всплывающее меню  -->
+
+    <style name="ButtonMenuBack" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_gravity">end</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:background">@drawable/ic_back</item>
+        <item name="android:layout_marginBottom">40dp</item>
+    </style>
+
+    <style name="DarkBackgroundMenu" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/black</item>
+        <item name="android:alpha">0.5</item>
+    </style>
 </resources>

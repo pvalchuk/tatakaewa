@@ -5,6 +5,10 @@ import android.os.Bundle
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.example.artapp.databinding.ActivityWelcomeBinding
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class WelcomeActivity : AppCompatActivity() {
 
@@ -14,6 +18,7 @@ class WelcomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         _binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -23,8 +28,8 @@ class WelcomeActivity : AppCompatActivity() {
             startActivity(Intent(this,CategoriesActivity::class.java))
             finish()
         }
-    }
 
+    }
     private fun animation() {
 
         val fadeIn3000 = AnimationUtils.loadAnimation(this, R.anim.fade_in_3000)
