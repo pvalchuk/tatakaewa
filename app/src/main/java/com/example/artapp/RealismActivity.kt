@@ -1,7 +1,10 @@
 package com.example.artapp
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.UnderlineSpan
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +23,7 @@ class RealismActivity : AppCompatActivity() {
     private lateinit var database: DatabaseReference
     private var realismData: List<Title> = RealismDataBase.realism
     private var currentIndex = 0
+
     private val binding
         get() = _binding ?: throw IllegalStateException("Binding for ActivityRealismBinding must not be null")
 
@@ -73,12 +77,22 @@ class RealismActivity : AppCompatActivity() {
         if (realismData.isNotEmpty()) {
             val randomIndex = realismData.indices.random()
             val currentRealism = realismData[randomIndex]
+            val spannableString = SpannableString(currentRealism.inspiration)
+            spannableString.setSpan(UnderlineSpan(), 0, currentRealism.inspiration.length, 0)
 
             with(binding) {
                 titleRealism.text = currentRealism.name
                 descriptionRealism.text = currentRealism.description
-                inspirationRealism.text = currentRealism.link
+                inspirationRealism.text = currentRealism.inspiration
+                inspirationRealism.text = spannableString
+                inspirationRealism.setOnClickListener {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(currentRealism.link))
+                    Toast.makeText(applicationContext, "открытие ссылки", Toast.LENGTH_SHORT).show()
+                    startActivity(intent)
+
+                }
             }
+
             currentIndex = randomIndex
 
             val currentRealismName = currentRealism.name
@@ -133,3 +147,5 @@ class RealismActivity : AppCompatActivity() {
         }
     }
 }
+
+

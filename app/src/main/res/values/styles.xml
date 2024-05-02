@@ -102,6 +102,8 @@
         <item name="layout_constraintStart_toStartOf">parent</item>
         <item name="layout_constraintTop_toBottomOf">@+id/descriptionRealism</item>
         <item name="android:text">more inspiration</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
     </style>
 
 <!--  Контейнер меню  -->
