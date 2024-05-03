@@ -47,9 +47,10 @@ class WelcomeActivity : AppCompatActivity() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         if (snapshot.exists()) {
                             val userDataSnapshot = snapshot.children.firstOrNull()
-                            if (userDataSnapshot != null) {
-                                val newUserId = userDataSnapshot.key
+                            val newUserId = userDataSnapshot?.key ?: ""
+                            if (newUserId.isNotEmpty()) {
                                 prefs.edit().putString("userId", newUserId).apply()
+                                database.child("users").child(newUserId).child("favorites").setValue(emptyList<String>())
                             }
                         } else {
                             val newUserId = database.child("users").push().key
@@ -57,13 +58,13 @@ class WelcomeActivity : AppCompatActivity() {
                             if (newUserId != null) {
                                 database.child("users").child(newUserId).setValue(userData)
                                 prefs.edit().putString("userId", newUserId).apply()
+                                database.child("users").child(newUserId).child("favorites").setValue(emptyList<String>())
                             }
                         }
                     }
                     override fun onCancelled(error: DatabaseError) {
                         Toast.makeText(applicationContext, "userId ошибка", Toast.LENGTH_SHORT).show()
                     }
-
                 })
         }
 

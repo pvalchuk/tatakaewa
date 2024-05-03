@@ -1,5 +1,6 @@
 package com.example.artapp
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -96,6 +97,7 @@ class RealismActivity : AppCompatActivity() {
             currentIndex = randomIndex
 
             val currentRealismName = currentRealism.name
+
             val favoriteRef = database.child("favorites").child(currentRealismName)
             favoriteRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -122,19 +124,22 @@ class RealismActivity : AppCompatActivity() {
     }
 
     private fun toggleFavorite() {
-        if (realismData.isNotEmpty()) {
+        val prefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val userId = prefs.getString("userId", null)
+        if (userId != null) {
             val currentRealism = realismData[currentIndex]
-            val favoriteRef = database.child("favorites").child(currentRealism.name)
+            val favoriteRef = database.child("users").child(userId).child("favorites").child(currentRealism.name)
 
             favoriteRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {
                         favoriteRef.removeValue()
+                        favoriteRef.removeValue()
                         binding.icFavoritesOrange.isVisible = false
                         binding.icFavorites.isVisible = true
                         Toast.makeText(applicationContext, "Удалено из избранного", Toast.LENGTH_SHORT).show()
                     } else {
-                        favoriteRef.setValue(currentRealism)
+                        favoriteRef.setValue(currentRealism.name)
                         binding.icFavorites.isVisible = false
                         binding.icFavoritesOrange.isVisible = true
                         Toast.makeText(applicationContext, "Добавленно в избранное", Toast.LENGTH_SHORT).show()
@@ -144,6 +149,8 @@ class RealismActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext, "Ошибка обновления состояния избранного", Toast.LENGTH_SHORT).show()
                 }
             })
+        } else {
+            Toast.makeText(applicationContext, "Пользователь не авторизован", Toast.LENGTH_SHORT).show()
         }
     }
 }
